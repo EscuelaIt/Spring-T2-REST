@@ -14,7 +14,8 @@ public class Autor {
 	@JsonIgnore
 	private List<Libro> libros = new ArrayList<>();
 
-	public Autor() {}
+	public Autor() {
+	}
 
 	public Autor(long id, String nombre, String nacionalidad) {
 		super();
@@ -50,7 +51,7 @@ public class Autor {
 	public long getId() {
 		return id;
 	}
-	
+
 	public void setId(long id) {
 		this.id = id;
 	}

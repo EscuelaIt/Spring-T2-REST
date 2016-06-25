@@ -14,25 +14,25 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 
 @RestController
 public class BooksController {
-	
+
 	@RequestMapping("/booktitles")
 	public List<String> getBookTitles(@RequestParam String title) {
-		
+
 		RestTemplate restTemplate = new RestTemplate();
-        
+
 		String url = "https://www.googleapis.com/books/v1/volumes?q=intitle:" + title;
-		
+
 		ObjectNode data = restTemplate.getForObject(url, ObjectNode.class);
-		
+
 		List<String> bookTitles = new ArrayList<String>();
-		
+
 		ArrayNode items = (ArrayNode) data.get("items");
 		for (int i = 0; i < items.size(); i++) {
-            JsonNode item = items.get(i);
+			JsonNode item = items.get(i);
 			String bookTitle = item.get("volumeInfo").get("title").asText();
-            bookTitles.add(bookTitle);            
-        }
-		
+			bookTitles.add(bookTitle);
+		}
+
 		return bookTitles;
 	}
 }

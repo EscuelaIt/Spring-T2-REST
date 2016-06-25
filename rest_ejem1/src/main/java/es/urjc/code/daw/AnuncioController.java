@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class AnuncioController {
-	
+
 	@RequestMapping("/anuncio")
 	public Anuncio anuncios() {
-		
-		return new Anuncio("Pepe","Vendo moto", "...");
+
+		return new Anuncio("Pepe", "Vendo moto", "...");
 	}
 }

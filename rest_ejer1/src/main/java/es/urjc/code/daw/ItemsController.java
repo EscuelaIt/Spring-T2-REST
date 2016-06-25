@@ -55,7 +55,7 @@ public class ItemsController {
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Item> getItem(@PathVariable long id) {
-		
+
 		Item item = items.get(id);
 
 		if (item != null) {
@@ -67,7 +67,7 @@ public class ItemsController {
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Item> borraItem(@PathVariable long id) {
-		
+
 		Item item = items.remove(id);
 
 		if (item != null) {

@@ -7,22 +7,26 @@ import com.fasterxml.jackson.annotation.JsonView;
 
 public class Autor {
 
-	interface Basico {}
-	interface Libros {}
-	
+	interface Basico {
+	}
+
+	interface Libros {
+	}
+
 	@JsonView(Basico.class)
 	private long id = -1;
-	
+
 	@JsonView(Basico.class)
 	private String nombre;
-	
+
 	@JsonView(Basico.class)
 	private String nacionalidad;
 
 	@JsonView(Libros.class)
 	private List<Libro> libros = new ArrayList<>();
 
-	public Autor() {}
+	public Autor() {
+	}
 
 	public Autor(long id, String nombre, String nacionalidad) {
 		super();
@@ -58,7 +62,7 @@ public class Autor {
 	public long getId() {
 		return id;
 	}
-	
+
 	public void setId(long id) {
 		this.id = id;
 	}

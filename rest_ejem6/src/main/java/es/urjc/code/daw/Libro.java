@@ -7,14 +7,15 @@ import com.fasterxml.jackson.annotation.JsonView;
 
 public class Libro {
 
-	interface Basico {}
-	
+	interface Basico {
+	}
+
 	@JsonView(Basico.class)
 	private long id = -1;
-	
+
 	@JsonView(Basico.class)
 	private String titulo;
-	
+
 	@JsonView(Basico.class)
 	private int precio;
 
