@@ -28,7 +28,7 @@ public class FlickrController {
 	public String flickrSearch(Model model, @RequestParam String search) throws UnsupportedEncodingException, RestClientException, URISyntaxException { 
 		
 		String url = "https://api.flickr.com/services/rest/"+
-				"?api_key="+FLICKR_API_KEY+"f&format=json"+
+				"?api_key="+FLICKR_API_KEY+"&format=json"+
 				"&method=flickr.photos.search&text="+URLEncoder.encode(search, "UTF-8")+"&nojsoncallback=?";
 		
 		RestTemplate rest = new RestTemplate();
