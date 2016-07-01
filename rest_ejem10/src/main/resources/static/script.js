@@ -21,7 +21,7 @@ function createItem(item, callback) {
     }).done(function (item) {
         console.log("Item created: " + JSON.stringify(item));
         callback(item);
-    })
+    });
 }
 
 //Update item in server
@@ -61,13 +61,16 @@ function showItem(item) {
     }
 
     $('#info').append(
-        '<div id="item-' + item.id + '"><input type="checkbox" ' + checked + '><span ' + style + '>' + item.description +
-        '</span> <button>Delete</button></div>')
+        '<div id="item-' + item.id + '">'+
+          '<input type="checkbox" ' + checked + '>'+
+          '<span ' + style + '>' + item.description + '</span>'+
+          '<button>Delete</button>'+
+        '</div>')
 }
 
 $(document).ready(function () {
 
-    loadItems(function (items) {
+    loadItems(function(items) {
         //When items are loaded from server
         for (var i = 0; i < items.length; i++) {
             showItem(items[i]);
