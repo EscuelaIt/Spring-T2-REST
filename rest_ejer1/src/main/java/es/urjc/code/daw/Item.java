@@ -4,7 +4,7 @@ public class Item {
 
 	private long id = -1;
 	private String description;
-	private String checked;
+	private boolean checked;
 
 	public Item() {
 	}
@@ -25,11 +25,11 @@ public class Item {
 		this.description = description;
 	}
 
-	public String getChecked() {
+	public boolean getChecked() {
 		return checked;
 	}
 
-	public void setChecked(String checked) {
+	public void setChecked(boolean checked) {
 		this.checked = checked;
 	}
 
